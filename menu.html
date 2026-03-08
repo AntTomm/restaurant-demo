@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- META DATA INFO -->
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content= "width = device-width, initial-scale = 1.0">
+        <title>Ristorante dell'Amore</title>
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <!-- FONT TAKEN FROM GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+
+    <!-- TITLE  -->
+    <header class = "header">
+        <div class = "logo">
+            Ristorante dell'Amore
+        </div>
+
+        <nav class = "navbar">
+            <!-- CLICKABLE SIDEBAR -->
+            <div class = "hamburger" id = "hamburger">
+                ☰
+            </div>
+            
+             <!-- NAVIGATION BAR  -->
+            <ul class ="nav-links" id = "navLinks">
+                <li><a href = "page.html">Home</a></li>
+                <li><a href = "menu.html">Menu</a></li>
+                <li><a href = "about.html">About</a></li>
+                <li><a href = "contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+            <!-- HERO -->
+         <section class ="hero">
+            <div class ="hero-text fade-in">
+                <h1>Ristorante dell'Amore</h1>
+                <p>The Best Italian food you'll taste.</p>
+            </div>
+         </section>
+
+         <!-- FADE LISTENER -->
+<script>
+    window.addEventListener("DOMContentLoaded", function(){
+        const text = document.querySelector(".fade-in");
+        if (text) {
+            text.classList.add("show");
+        }
+    });
+</script>
+            
+            <!-- MENU CONTENTS -->
+             <section class = "menu" id = "menu">
+                <h1>Il menu</h1>
+
+                <div class ="menu-category">
+                    <h2>Antipasto</h2>
+
+                <div class ="menu-item">
+                    <div class = "menu-item-header">
+                        <h3>Patè Di Fegato</h3>
+                        <span>$5.50</span>
+                    </div>
+                    <p>Liver patè</p>
+                    </div>
+
+                    <div class = "menu-item">
+                        <div class= "menu-item-header">
+                            <h3>Prosciutto E Melone</h3>
+                            <span> $6.00</span>
+                        </div>
+                        <p>Cured Ham & Melon</p>
+                    </div>
+
+                    <div class ="menu-item">
+                        <div class ="menu-item-header">
+                            <h3>Salmone affumicato</h3>
+                            <span>$10.30</span>
+                        </div>
+                        <p>Smoked Salmon</p>
+                    </div>
+
+                    <div class ="menu-category">
+                        <h2>Primi Piatti</h2>
+                    </div>
+
+                    <div class ="menu-item">
+                        <div class = "menu-item-header">
+                            <h3>Tortellini In Brodo</h3>
+                            <span>$7.00</span>
+                        </div>
+                        <p>Tortellini in Broth</p>
+                        </div>
+                        
+                    <div class ="menu-item">
+                    <div class = "menu-item-header">
+                        <h3>Gnocchi Al Sugo Di Pomodoro</h3>
+                        <span>$6.50</span>
+                    </div>
+                    <p>Dumplings With Tomato Sauce</p>
+                    </div>
+
+                    <div class ="menu-item">
+                    <div class = "menu-item-header">
+                        <h3>Risotto Alla Marinara</h3>
+                        <span>$8.50</span>
+                    </div>
+                    <p>Creamy Rice With Seafood</p>
+                    </div>
+
+                    <div class ="menu-item">
+                        <div class = "menu-item-header">
+                            <h3>Spaghetti Alla Bolognese</h3>
+                            <span>$6.30</span>
+                        </div>
+                        <p>Spaghetti With Meat Sauce</p>
+                        </div>
+
+                        <div class ="menu-category">
+                            <h2>Contorni</h2>
+                        </div>
+
+                        <div class ="menu-item">
+                        <div class = "menu-item-header">
+                            <h3>Peperoni Alla Griglia</h3>
+                            <span>$3.50</span>
+                        </div>
+                        <p>Grilled Peppers</p>
+                        </div>
+
+                        <div class ="menu-item">
+                            <div class = "menu-item-header">
+                                <h3>Zucchine e Fagiolini</h3>
+                                <span>$5.20</span>
+                            </div>
+                            <p>Zucchini & Green Beans</p>
+                            </div>
+
+                        <div class ="menu-category">
+                            <h2>Bevande</h2>
+                        </div>
+
+                        <div class ="menu-item">
+                            <div class = "menu-item-header">
+                                <h3>Vino Della Casa</h3>
+                                <span>$4.00</span>
+                            </div>
+                            <p>House Wine</p>
+                            </div>
+
+                        <div class ="menu-item">
+                            <div class = "menu-item-header">
+                                <h3>Birra</h3>
+                                <span>$2.00</span>
+                            </div>
+                            <p>Beer</p>
+                            </div>
+
+                            <div class ="menu-item">
+                            <div class = "menu-item-header">
+                                <h3>Acqua Minerale (Naturale / Frizzante)</h3>
+                                <span>$2.00</span>
+                            </div>
+                            <p>Mineral Water (Still / Sparkling)</p>
+                            </div>
+                    
+
+             </section>
+
+             <!-- MENU PICTURES USING SLIDER -->
+              <section class = "gallery">
+                <h1>Our Gallery</h1>
+
+                <div class ="slider">
+                    <button class ="prev" onclick="prevSlide()"><</button>
+                    <img id ="slider-image" src="images/liverpate.jpg" alt = "Gallery Slideshow">
+
+                    <button class = "next" onclick="nextSlide()">></button>"
+                </div>
+              </section>
+
+
+            <script>
+                // CONTROLS FOR SIDEBAR MENU WHEN CLICKED; THIS JS WILL CONTROL THE SIDEBAR
+                const hamburger = document.getElementById("hamburger");
+                const navLinks = document.getElementById("navLinks"); // GRABS DATA FROM id navLinks
+                hamburger.addEventListener("click", () => {
+                    navLinks.classList.toggle("show");
+                });
+        
+            </script>
+
+            <script>
+                // SCRIPT FOR SCROLLER
+                const images = [
+                "images/gnocchi.jpg",
+                "images/liverpate.jpg",
+                "images/prosciuttoandmelon.jpg",
+                "images/risotto.jpg",
+                "images/smokedsalmon.jpg",
+                "images/tortellini.jpg",
+                "images/redwine.jpg",
+                "images/spaghetti.jpg"];
+
+                let index = 0;
+                function showImg() {
+                    document.getElementById("slider-image").src = images[index];
+                }
+
+                function nextSlide(){
+                    index++;
+                    if(index >= images.length){
+                        index = 0;
+                    }
+                    showImg();
+                }
+
+                function prevSlide(){
+                    index--;
+                    if(index < 0){
+                        index = images.length - 1;
+                    }
+                    showImg();
+                }
+            </script>
+
+<!-- FOOTER -->
+<footer class ="footer">
+    <div class ="footer-container">
+        <div class ="footer-section">
+            <h3>Ristorante dell'Amore</h3>
+            <p>Autentica cucina italiana nel cuore di New York.</p>
+            <p>Created by Anthony Tommaso</p>
+        </div>
+
+        <div class ="footer-section">
+            <h3>Hours</h3>
+            <p>Mon - Thu: 11:00 AM - 10:00 PM</p>
+            <p>Fri - Sat: 11:00 AM - 11:00 PM</p>
+            <p>Sun: 12:00 PM - 9:00 PM</p>
+        </div>
+
+        <div class = "footer-section">
+        <h3>Follow Us</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 Ristorante dell'Amore
+    </p>
+
+ </footer>
+        </body>
+    </html>
