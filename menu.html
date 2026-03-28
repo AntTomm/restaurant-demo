@@ -33,6 +33,7 @@
                 <li><a href = "menu.html">Menu</a></li>
                 <li><a href = "about.html">About</a></li>
                 <li><a href = "contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -64,7 +65,11 @@
                 <div class ="menu-item">
                     <div class = "menu-item-header">
                         <h3>Patè Di Fegato</h3>
+
+                        <div class="price-cart">
                         <span>$5.50</span>
+                        <button onclick="addToCart('Patè Di Fegato', 5.50)">Add</button>
+                    </div>
                     </div>
                     <p>Liver patè</p>
                     </div>
@@ -72,7 +77,11 @@
                     <div class = "menu-item">
                         <div class= "menu-item-header">
                             <h3>Prosciutto E Melone</h3>
+
+                            <div class="price-cart">
                             <span> $6.00</span>
+                            <button onclick="addToCart('Prosciutto E Melone', 6.00)">Add</button>
+                        </div>
                         </div>
                         <p>Cured Ham & Melon</p>
                     </div>
@@ -80,7 +89,11 @@
                     <div class ="menu-item">
                         <div class ="menu-item-header">
                             <h3>Salmone affumicato</h3>
+
+                            <div class="price-cart">
                             <span>$10.30</span>
+                            <button onclick="addToCart('Salmone affumicato', 10.30)">Add</button>
+                        </div>
                         </div>
                         <p>Smoked Salmon</p>
                     </div>
@@ -92,7 +105,11 @@
                     <div class ="menu-item">
                         <div class = "menu-item-header">
                             <h3>Tortellini In Brodo</h3>
+
+                            <div class="price-cart">
                             <span>$7.00</span>
+                            <button onclick="addToCart('Tortellini In Brodo', 7.00)">Add</button>
+                        </div>
                         </div>
                         <p>Tortellini in Broth</p>
                         </div>
@@ -100,24 +117,34 @@
                     <div class ="menu-item">
                     <div class = "menu-item-header">
                         <h3>Gnocchi Al Sugo Di Pomodoro</h3>
-                        <span>$6.50</span>
-                    </div>
+
+                        <div class="price-cart">
+                            <span>$6.50</span>
+                            <button onclick="addToCart('Gnocchi Al Sugo Di Pomodoro', 6.50)">Add</button>
+                        </div>
+                        </div>
                     <p>Dumplings With Tomato Sauce</p>
                     </div>
 
                     <div class ="menu-item">
                     <div class = "menu-item-header">
                         <h3>Risotto Alla Marinara</h3>
-                        <span>$8.50</span>
-                    </div>
+                        <div class="price-cart">
+                            <span>$8.50</span>
+                            <button onclick="addToCart('Risotto Alla Marinara', 8.50)">Add</button>
+                        </div>
+                        </div>
                     <p>Creamy Rice With Seafood</p>
                     </div>
 
                     <div class ="menu-item">
                         <div class = "menu-item-header">
                             <h3>Spaghetti Alla Bolognese</h3>
-                            <span>$6.30</span>
-                        </div>
+                            <div class="price-cart">
+                                <span>$6.30</span>
+                                <button onclick="addToCart('Spaghetti Alla Bolognese', 6.30)">Add</button>
+                            </div>
+                            </div>
                         <p>Spaghetti With Meat Sauce</p>
                         </div>
 
@@ -128,16 +155,22 @@
                         <div class ="menu-item">
                         <div class = "menu-item-header">
                             <h3>Peperoni Alla Griglia</h3>
-                            <span>$3.50</span>
-                        </div>
+                            <div class="price-cart">
+                                <span>$3.50</span>
+                                <button onclick="addToCart('Peperoni Alla Griglia', 3.50)">Add</button>
+                            </div>
+                            </div>
                         <p>Grilled Peppers</p>
                         </div>
 
                         <div class ="menu-item">
                             <div class = "menu-item-header">
                                 <h3>Zucchine e Fagiolini</h3>
-                                <span>$5.20</span>
-                            </div>
+                                <div class="price-cart">
+                                    <span>$5.20</span>
+                                    <button onclick="addToCart('Zucchine e Fagiolini', 5.20)">Add</button>
+                                </div>
+                                </div>
                             <p>Zucchini & Green Beans</p>
                             </div>
 
@@ -148,27 +181,39 @@
                         <div class ="menu-item">
                             <div class = "menu-item-header">
                                 <h3>Vino Della Casa</h3>
-                                <span>$4.00</span>
-                            </div>
+                                <div class="price-cart">
+                                    <span>$4.00</span>
+                                    <button onclick="addToCart('Vino Della Casa', 4.00)">Add</button>
+                                </div>
+                                </div>
                             <p>House Wine</p>
                             </div>
 
                         <div class ="menu-item">
                             <div class = "menu-item-header">
                                 <h3>Birra</h3>
-                                <span>$2.00</span>
-                            </div>
+                                <div class="price-cart">
+                                    <span>$2.00</span>
+                                    <button onclick="addToCart('Birra', 2.00)">Add</button>
+                                </div>
+                                </div>
                             <p>Beer</p>
                             </div>
 
                             <div class ="menu-item">
                             <div class = "menu-item-header">
                                 <h3>Acqua Minerale (Naturale / Frizzante)</h3>
-                                <span>$2.00</span>
-                            </div>
+                                <div class="price-cart">
+                                    <span>$2.00</span>
+                                    <button onclick="addToCart('Acqua Minerale', 2.00)">Add</button>
+                                </div>
+                                </div>
                             <p>Mineral Water (Still / Sparkling)</p>
                             </div>
                     
+                            <a href="cart.html" class="cart-link">
+                                <button>View Cart</button>
+                            </a>
 
              </section>
 
@@ -257,5 +302,25 @@
     </p>
 
  </footer>
+
+ <script>
+    function addToCart(name, price) { // add to cart
+        let cart = JSON.parse(localStorage.getItem("cart")) || []; // grab from "cart"
+    
+        const existingItem = cart.find(item => item.name === name);
+    
+        if (existingItem) { // increase quantity if already there
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ // push strict json-format
+                name: name,
+                price: price,
+                quantity: 1
+            });
+        }
+    
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+    </script>
         </body>
     </html>
