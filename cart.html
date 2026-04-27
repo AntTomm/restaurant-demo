@@ -149,11 +149,13 @@
     }
 
     localStorage.setItem("cart", JSON.stringify(cart)); // save cart
+    alert("Item removed from cart!");
     displayCart();
     }
     
     function clearCart() { // clear everything 
         localStorage.removeItem("cart");
+        alert("Cart cleared!");
         displayCart(); // refresh ui 
     }
     
