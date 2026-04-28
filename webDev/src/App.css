@@ -522,3 +522,9 @@ body {
     height: 350px;
   }
 }
+
+/* NAV BAR */
+.active-link{
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+}

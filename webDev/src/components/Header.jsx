@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Header() { // HEADER IN REACT / JSX
     return (
         <header className="header">
@@ -6,11 +6,11 @@ function Header() { // HEADER IN REACT / JSX
 
     <nav className="navbar">
         <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/menu">Menu</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/cart">Cart</Link></li>
+            <li><NavLink to = "/" className={({isActive}) => (isActive ? "active-link" : "")}>Home</NavLink></li>
+            <li><NavLink to = "/menu" className={({isActive}) => (isActive ? "active-link" : "")}>Menu</NavLink></li>
+            <li><NavLink to = "/about" className={({isActive}) => (isActive ? "active-link" : "")}>About</NavLink></li>
+            <li><NavLink to = "/contact" className={({isActive}) => (isActive ? "active-link" : "")}>Contact Us!</NavLink></li>
+            <li><NavLink to ="/Cart" className={({isActive}) => (isActive ? "active-link" : "")}>Cart</NavLink></li>
         </ul>
     </nav>
     </header>
