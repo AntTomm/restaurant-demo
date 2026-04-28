@@ -124,9 +124,13 @@ const menuItems = [
 
 
 function Menu() {
+    // NOTIFICATIONS FOR CART
+    const [popMessage, setPopMessage] = useState("");
+
     function addToCart(item){
         const cart = JSON.parse(localStorage.getItem("cart")) || []; 
         const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+        
 
         if(existingItem){
             existingItem.quantity += 1;
@@ -139,7 +143,11 @@ function Menu() {
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-        alert(`${item.name} added to your cart!`);
+        setPopMessage(`${item.name} added to cart!`);
+
+        setTimeout(() => {
+            setPopMessage("");
+        }, 4000);
     }
 
     // SLIDESHOE FUNCTIONALITY
@@ -154,9 +162,16 @@ function Menu() {
             return () => clearInterval(timer);
         }, []);
 
+
     return (
         <main className="page menu-page">
             <h1>Il Menu</h1>
+            {/* POPUP NOTIFS */}
+            {popMessage && (
+            <div className="popUp">
+                {popMessage} 
+            </div>
+            )}
             <div className="menu-slideshow">
                 <img src={slideshowImages[currentSlide].src}
                 alt = {slideshowImages[currentSlide].alt}
@@ -197,21 +212,6 @@ function Menu() {
             <Link to="/cart" className="cart-link">
             <button>View Cart</button>
             </Link>
-
-            {/* <div className="menu-slideshow">
-                <img src={slideshowImages[currentSlide].src}
-                alt = {slideshowImages[currentSlide].alt}
-                />
-
-                <div className="slideshow-dots">
-                    {slideshowImages.map((image, index) => (
-                        <button key={image.src} className={index === currentSlide ? "dot active-dot" : "dot"}
-                        onClick={() => setCurrentSlide(index)}
-                        aria-label={`Show slide ${index+1}`}
-                        ></button>
-                    ))}
-                </div>
-            </div> */}
         </main>
     );
   }
