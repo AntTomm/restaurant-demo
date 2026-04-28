@@ -10,7 +10,7 @@ function Header() { // HEADER IN REACT / JSX
             <li><NavLink to = "/menu" className={({isActive}) => (isActive ? "active-link" : "")}>Menu</NavLink></li>
             <li><NavLink to = "/about" className={({isActive}) => (isActive ? "active-link" : "")}>About</NavLink></li>
             <li><NavLink to = "/contact" className={({isActive}) => (isActive ? "active-link" : "")}>Contact Us!</NavLink></li>
-            <li><NavLink to ="/Cart" className={({isActive}) => (isActive ? "active-link" : "")}>Cart</NavLink></li>
+            <li><NavLink to ="/cart" className={({isActive}) => (isActive ? "active-link" : "")}>Cart</NavLink></li>
         </ul>
     </nav>
     </header>
