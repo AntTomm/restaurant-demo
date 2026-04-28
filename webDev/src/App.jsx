@@ -7,6 +7,7 @@ import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
+import Hero from "./components/Hero";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div>
       {/* HEADER IN REACT! */}
       <Header /> 
+      <Hero />
       
       <Routes>
         <Route path="/" element={<Home />} />

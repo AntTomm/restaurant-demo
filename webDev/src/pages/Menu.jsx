@@ -1,4 +1,30 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+// SLIDESHOW
+const slideshowImages = [
+    {
+      src: "/images/spaghetti.jpg",
+      alt: "Spaghetti dish",
+    },
+    {
+      src: "/images/risotto.jpg",
+      alt: "Risotto dish",
+    },
+    {
+      src: "/images/tortellini.jpg",
+      alt: "Tortellini dish",
+    },
+    {
+      src: "/images/smokedsalmon.jpg",
+      alt: "Smoked salmon dish",
+    },
+    {
+      src: "/images/tiramisu.jpg",
+      alt: "Tiramisu dessert",
+    },
+  ];
+
 
 // MENU ITEMS FORMATTED
 const menuItems = [
@@ -116,9 +142,35 @@ function Menu() {
         alert(`${item.name} added to your cart!`);
     }
 
+    // SLIDESHOE FUNCTIONALITY
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+        useEffect(() => {
+            const timer = setInterval(() => {
+                setCurrentSlide((previousSlide) =>
+                previousSlide === slideshowImages.length - 1 ? 0 : previousSlide + 1);
+            }, 3000);
+
+            return () => clearInterval(timer);
+        }, []);
+
     return (
         <main className="page menu-page">
             <h1>Il Menu</h1>
+            <div className="menu-slideshow">
+                <img src={slideshowImages[currentSlide].src}
+                alt = {slideshowImages[currentSlide].alt}
+                />
+
+                <div className="slideshow-dots">
+                    {slideshowImages.map((image, index) => (
+                        <button key={image.src} className={index === currentSlide ? "dot active-dot" : "dot"}
+                        onClick={() => setCurrentSlide(index)}
+                        aria-label={`Show slide ${index+1}`}
+                        ></button>
+                    ))}
+                </div>
+            </div>
 
             {menuItems.map((section) => (
                 <section className="menu-category" key={section.category}>
@@ -145,6 +197,21 @@ function Menu() {
             <Link to="/cart" className="cart-link">
             <button>View Cart</button>
             </Link>
+
+            {/* <div className="menu-slideshow">
+                <img src={slideshowImages[currentSlide].src}
+                alt = {slideshowImages[currentSlide].alt}
+                />
+
+                <div className="slideshow-dots">
+                    {slideshowImages.map((image, index) => (
+                        <button key={image.src} className={index === currentSlide ? "dot active-dot" : "dot"}
+                        onClick={() => setCurrentSlide(index)}
+                        aria-label={`Show slide ${index+1}`}
+                        ></button>
+                    ))}
+                </div>
+            </div> */}
         </main>
     );
   }

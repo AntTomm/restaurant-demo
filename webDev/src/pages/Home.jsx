@@ -1,15 +1,6 @@
 function Home() {
     return (
       <>
-      {/* HERO */}
-        <section className="hero">
-          <div className="hero-text">
-            <h1>Ristorante dell'Amore</h1>
-            <p>The Best Italian food you'll taste.</p>
-
-          </div>
-        </section>
-
         <main className="home-intro">
           <div className="home-intro-container">
             <div className="home-intro-content">
