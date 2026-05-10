@@ -49,7 +49,7 @@ function Cart() {
   async function removeCart(menuItemId) {
     try {
         const response = await fetch(
-        `http://localhost:5000/api/cart/${menuItemId}`,
+        `${API_BASE_URL}/api/cart/${menuItemId}`,
         {
           method: "PUT",
         }
