@@ -24,7 +24,7 @@ function Menu() {
   
   // adds selected menu item to database cart
   // sends POST request to backend -> cart updates
-  // get saved in db
+  // get saved in database
   async function addToCart(item) {
     try {
       const response = await fetch(`${API_BASE_URL}/api/cart`, {
