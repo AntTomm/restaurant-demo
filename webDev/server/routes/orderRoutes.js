@@ -3,6 +3,10 @@ import Order from "../models/Order.js";
 
 const router = express.Router();
 
+// creates a new order and sends to database
+// receives cart items & total from frontend
+// & stores as a cmpleted order json
+
 router.post("/", async (req, res) => {
   try {
     const { items, total } = req.body;

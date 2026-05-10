@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import MenuItem from "./models/MenuItem.js";
+import "dotenv/config";
 
 const menuItems = [
   { category: "Antipasto", name: "Pate Di Fegato", description: "Liver Pate", price: 5.5 },
@@ -19,9 +20,10 @@ const menuItems = [
   { category: "Bevande", name: "Acqua Minerale", description: "Mineral Water Still / Sparkling", price: 2.0 },
 ];
 
+// to connect mongo menu 
 async function seedMenu() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/restaurantDB");
+    await mongoose.connect(process.env.MONGODB_URI);
 
     await MenuItem.deleteMany({});
     await MenuItem.insertMany(menuItems);

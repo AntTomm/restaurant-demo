@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// ORDER SCHEMA FOR MONGOOSE
 const orderSchema = new mongoose.Schema(
   {
     items: [

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // SLIDESHOW
 const slideshowImages = [
@@ -10,6 +11,7 @@ const slideshowImages = [
   { src: "/images/tiramisu.jpg", alt: "Tiramisu dessert" },
 ];
 
+// menu
 function Menu() {
   const [popMessage, setPopMessage] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,31 +20,52 @@ function Menu() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  function addToCart(item) {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItem = cart.find((cartItem) => cartItem._id === item._id);
 
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push({
-        ...item,
-        quantity: 1,
+  
+  // adds selected menu item to database cart
+  // sends POST request to backend -> cart updates
+  // get saved in db
+  async function addToCart(item) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/cart`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          menuItemId: item._id,
+          name: item.name,
+          price: item.price,
+          quantity: 1,
+        }),
       });
+  
+      if (!response.ok) {
+        throw new Error("Failed to add item to cart.");
+      }
+  
+      setPopMessage(`${item.name} added to cart!`);
+  
+      setTimeout(() => {
+        setPopMessage("");
+      }, 4000);
+    } catch (error) {
+      console.error(error);
+      setPopMessage("Could not add item to cart.");
+  
+      setTimeout(() => {
+        setPopMessage("");
+      }, 4000);
     }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    setPopMessage(`${item.name} added to cart!`);
-
-    setTimeout(() => {
-      setPopMessage("");
-    }, 4000);
   }
 
+
+  // loads all menu items from backend when page first opens
+  // backend gets menu data from db & sends to frontend
   useEffect(() => {
     async function fetchMenu() {
       try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch(`${API_BASE_URL}/api/menu`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch menu.");
@@ -61,8 +84,11 @@ function Menu() {
     fetchMenu();
   }, []);
 
+
+  // runs menu slideshow automatically
   useEffect(() => {
     const timer = setInterval(() => {
+        // switches to next img every 3 seconds & loops back to start
       setCurrentSlide((previousSlide) =>
         previousSlide === slideshowImages.length - 1 ? 0 : previousSlide + 1
       );
@@ -71,6 +97,7 @@ function Menu() {
     return () => clearInterval(timer);
   }, []);
 
+  // shows msg while menu data is being fetched
   if (loading) {
     return (
       <main className="page menu-page">

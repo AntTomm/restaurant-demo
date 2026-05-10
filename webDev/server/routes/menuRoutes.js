@@ -3,6 +3,8 @@ import MenuItem from "../models/MenuItem.js";
 
 const router = express.Router();
 
+
+// gets all menu items from database
 router.get("/", async (req, res) => {
   try {
     const items = await MenuItem.find();
@@ -12,6 +14,8 @@ router.get("/", async (req, res) => {
         (section) => section.category === item.category
       );
 
+      // groups all items by categories so that the frontend can display them
+      // the same way as before
       const formattedItem = {
         _id: item._id,
         name: item.name,

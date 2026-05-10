@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// MENU SCHEMA FOR MONGOOSE
 const menuItemSchema = new mongoose.Schema({
   category: {
     type: String,
